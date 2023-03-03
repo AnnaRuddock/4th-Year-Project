@@ -1,10 +1,16 @@
-para = struct('N', 6.4, 'alpha', 0.019, ...
-    'beta', 4, 'q', 0.16*2.2, 'h', 0.72, 'lambda_h', 0.25, 'phi', 6.1, ...
-    'mu', 0.3, 'gamma_1', 0.68, 'gamma_2', 1.9, 't', 8);
+P = [6.4;0.019;4;0.16*2.2;0.72;0.25;6.1;0.3;0.4744];
 
-gamma = para.gamma_1*(1-1/((para.t-7)*para.gamma_2));
+N = P(1);
+alpha = P(2);
+beta = P(3);
+q = P(4);
+h = P(5);
+lambda_h = P(6);
+phi = P(7);
+mu = P(8);
+gamma = P(9);
 
-g = gamma+para.mu;
+g = (1-mu)*gamma+mu;
 
-Reff = [para.N*para.alpha*para.beta*para.q+ para.h*para.lambda_h, (1-para.h)*para.lambda_h;
-    para.h*(para.N*para.q*g + (1-g)*(para.N*para.q + para.phi)), (1-para.h)*(para.N*para.q*g + (1-g)*(para.N*para.q + para.phi))]
+Reff = [N*alpha*beta*q+ h*lambda_h, (1-h)*lambda_h;
+    h*(N*q*g + (1-g)*(N*q + phi)), (1-h)*(N*q*g + (1-g)*(N*q + phi))]
