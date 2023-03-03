@@ -1,4 +1,8 @@
-function[plots] = Ebolaplots(P) 
+P = [6.4;0.019;4;0.16*2.2;0.72;0.25;6.1;0.3;0.4744];
+
+Ebolaplot(P)
+
+function[plots] = Ebolaplot(P) 
    % Looping over all parameters in the model
    for j = 1:9
         % Defining a step size proportional to the size of parameter being
