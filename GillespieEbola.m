@@ -1,4 +1,6 @@
-% clearing all stored values and the command window
+% Increasing axes font size
+
+set(0,'defaultaxesfontsize',12)
 
 % Inputting constants
 
@@ -141,6 +143,6 @@ figure(2)
 plot(B(:,1), B(:,2), 'Color', 'r');
 hold on
 yline(max(0, 1-x(2)), 'Color', 'r', 'LineStyle','--');
-xlabel('Number of people infected')
-ylabel('Probability of major outbreak')
-legend('Simulation starting from I_h = 1, I_c = 0', 'Expected prob of major outbreak starting from Ic = 1, Ih = 0', 'Simulation starting from I_h = 0, I_c = 1', 'Expected prob of major outbreak starting from Ic = 0, Ih = 1')
+xlabel('Total Number of people infected (M)')
+ylabel('Proportion of simulations in which \newline threshold M was reached')
+legend('Simulation starting from I_h = 1, I_c = 0', 'Expected PMO starting from I_c = 1, I_h = 0', 'Simulation starting from I_h = 0, I_c = 1', 'Expected PMO starting from I_c = 0, I_h = 1')
