@@ -57,8 +57,8 @@ for k = 1:6
 
 end
 
-xlabel('Number of individuals infected simultaneously (N)')
-ylabel('Proportion of simulations in which threshold N was reached')
+xlabel('Number of individuals infected simultaneously (M)')
+ylabel('Proportion of simulations in which threshold M was reached')
 legend({'R_0 = 0.8','','R_0 = 1.01','','R_0 = 1.1','','R_0 = 1.3','','R_0 = 1.6','','R_0 = 2','' }, 'Location','northeast')
 
 
