@@ -22,7 +22,7 @@ u = 1;
 N = 1000;
 N_c = propc*N;
 N_a = N-N_c;
-Beta = K*(1/u);
+Beta = K*u;
 beta_cc = Beta(1,1)/N_c;
 beta_ac = Beta(1,2)/N_c;
 beta_ca = Beta(2,1)/N_a;
@@ -153,8 +153,8 @@ yline(max(0, 1-x(2)), 'Color', 'red', 'LineStyle','--');
 
 % Adding labels to axes
 
-xlabel('Number of individuals infected simultaneously (N)')
-ylabel('Proportion of simulations in which threshold N was reached')
+xlabel('Number of individuals infected simultaneously (M)')
+ylabel('Proportion of simulations in which threshold M was reached')
 
 % Adding legend labels
 
