@@ -2,7 +2,7 @@ P = [6.4;0.019;4;0.16*2.2;0.72;0.25;6.1;0.3;0.4744];
 
 % Increasing axes font size
 
-set(0,'defaultaxesfontsize',16)
+set(0,'defaultaxesfontsize',15)
 
 % Looping over all parameters in the model
 for j = 1:9
@@ -97,10 +97,10 @@ xlabel('Proportion of infected people hospitalised, h')
 xlim([0 1])
 
 figure(6)
-xlabel('Average number of visitors infected by \newline a hospitalised person, \lambda_h')
+xlabel('Avg. no. of visitors infected by a hospitalised person, \lambda_h')
 
 figure(7)
-xlabel('Average number of people infected at an \newline insecure burial, \phi')
+xlabel('Avg. no. of people infected at an insecure burial, \phi')
 
 figure(8)
 xlabel('Survival probability, \mu')
