@@ -77,8 +77,8 @@ figure(2)
 % maximum number of people infected is in each bin
 histogram(maxIvalues, 25,'Normalization','probability')
 xlim([0 250])
-xlabel('Number of individuals infected simultaneously (M)')
-ylabel('Proportion of simulations in which threshold M was reached')
+xlabel('Number of individuals infected simultaneously')
+ylabel('Normalised Frequency Density')
 legend('$P(major \; outbreak)=0.5$','Interpreter','latex')
 
 
