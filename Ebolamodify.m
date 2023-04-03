@@ -1,3 +1,4 @@
+% Inputting a vector of parameter values
 P = [6.4;0.019;4;0.16*2.2;0.72;0.25;6.1;0.3;0.4744];
 
 Ebolavary(P)
