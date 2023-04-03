@@ -28,7 +28,7 @@ beta_ac = Beta(1,2)/N_c;
 beta_ca = Beta(2,1)/N_a;
 beta_aa = Beta(2,2)/N_a;
 
-nsims = 10000;
+nsims = 1000000;
 % Creating table for the maximum number of infections
 maxIvalues = zeros(nsims,1);
     
@@ -154,10 +154,10 @@ yline(max(0, 1-x(2)), 'Color', 'red', 'LineStyle','--');
 % Adding labels to axes
 
 xlabel('Number of individuals infected simultaneously (M)')
-ylabel('Proportion of simulations in which threshold M was reached')
+ylabel('Proportion of simulations in which \newline threshold M was reached')
 
 % Adding legend labels
 
-legend({'Start with 1 infected child', '', 'Start with 1 infected adult', ''}, 'Location','northeast')
+legend({'Start with a single infected child', '', 'Start with a single infected adult', ''}, 'Location','northeast')
 
 
