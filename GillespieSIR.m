@@ -5,12 +5,14 @@ close all
 Rvalues = [0.8, 1.01, 1.1, 1.3, 1.6, 2];
 colour = ["r" "g" "b" "c" "m" "k"];
 
+
+figure(1)
 for k = 1:6
 
     u = 1;
     N = 1000;
     beta = (Rvalues(k)*u)/N;
-    nsims = 10000;
+    nsims = 1000000;
     maxIvalues = zeros(nsims,1);
     
     for j = 1:nsims
@@ -57,13 +59,18 @@ for k = 1:6
 
 end
 
+hold off
+
 xlabel('Number of individuals infected simultaneously (M)')
 ylabel('Proportion of simulations in which threshold M was reached')
 legend({'R_0 = 0.8','','R_0 = 1.01','','R_0 = 1.1','','R_0 = 1.3','','R_0 = 1.6','','R_0 = 2','' }, 'Location','northeast')
 
-
-
-
+figure(2)
+histogram(maxIvalues, 25,'Normalization','probability')
+xlim([0 250])
+xlabel('Number of individuals infected simultaneously (M)')
+ylabel('Proportion of simulations in which threshold M was reached')
+legend('$P(major \; outbreak)=0.5$','Interpreter','latex')
 
 
 
