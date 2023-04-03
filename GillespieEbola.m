@@ -12,6 +12,7 @@ fun = @(r)PGFmethodebola(r, P);
 x0 = [0,0];
 x = fsolve(fun,x0);
 
+% Getting parameter values from the vector of parameters
 N = P(1);
 alpha = P(2);
 beta = P(3);
@@ -22,8 +23,10 @@ phi = P(7);
 mu = P(8);
 gamma = P(9);
 
+% Computing the probability of either recovering from Ebola or dying and having a secure burial
 g = gamma*(1-mu)+mu;
 
+% Computing the Reff matrix
 Reff = [N*alpha*beta*q+ h*lambda_h, (1-h)*lambda_h;
     h*(N*q*g + (1-g)*(N*q + phi)), (1-h)*(N*q*g + (1-g)*(N*q + phi))];
 
@@ -140,9 +143,12 @@ end
 % Plotting lines
 
 figure(2)
+% Plotting lines for the proportion of outbreaks where thresholds for the maximum number of people infected simultaneously are exceeded
 plot(B(:,1), B(:,2), 'Color', 'r');
 hold on
+% Plotting the expected probabilities of major outbreak
 yline(max(0, 1-x(2)), 'Color', 'r', 'LineStyle','--');
+% Adding labels and legend
 xlabel('Total Number of people infected (M)')
 ylabel('Proportion of simulations in which \newline threshold M was reached')
 legend('Simulation starting from I_h = 1, I_c = 0', 'Expected PMO starting from I_c = 1, I_h = 0', 'Simulation starting from I_h = 0, I_c = 1', 'Expected PMO starting from I_c = 0, I_h = 1')
